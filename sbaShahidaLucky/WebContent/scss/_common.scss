@@ -1,0 +1,298 @@
+// overwrite default
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+// end overwrite default
+@import '../scss/variable';
+//-------------------------------------Header Style (Top Bar) with LOGO---------------------------------------------
+#main_header  {
+    height: $headerHeight;
+    background-color: darken($primaryColor, 5%);
+    border-bottom: 1px solid darken($primaryColor, 10%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    #main_header_right {
+        display: flex;
+        align-items: center;
+   }
+
+
+    #header_search_form{
+        display: flex;
+        align-items: center;
+        input {
+            height: 30px;
+            width: 0;
+            background-color: #F4BD0C;
+            border: none;
+            transition: 1s width;
+            padding-left: 5px;
+        }
+        button{
+            height: 30px;
+            width: 30px;
+            background-color: #F4BD0C;
+            border: 0;
+            margin-left: -5px;
+        }
+        &:hover input{
+            width: 200px;
+        }        
+    }
+        .main_header_dropdown{
+        display: flex;
+        height: $headerHeight;
+        padding-left: $headerHeight / 5;
+        padding-right: $headerHeight / 5;
+        align-items: center;
+        p {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+//------------------------------------ Nav Bar (Menu Bar) Styles------------------------------------------------
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+   background-color: #F4BD0C; 
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* right menu */
+#right_align_menu{
+    float: right;
+    a {
+        text-transform: uppercase;
+    }
+
+}
+//-------------------------------------Social Icons--------------------------------------------
+#social_icon{
+    // height: 50px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        height: 40px;
+        width: 40px;
+        border-radius: 50px;
+        background-color: #A29060;
+
+        font-size: 25px;
+        text-align: center;
+        line-height: 40px;
+        color: white;
+        margin: 5px;
+        &:hover{
+            color: black;
+        }
+    }
+}
+//------------------------------------Index Page Styles----------------------------------------
+#image_conatiner{
+    display: flex;
+    background-color: beige;
+    align-items: center;
+    border-radius: 2%;
+}
+#name_container{
+    margin: 5%;
+    background-image: url("../images/background.jpg");
+    padding: 5%;
+    width: 600px;
+    height: 300px;
+    border-radius: 10%;
+    //animation:  fadeIn 5s infinite;
+    align-content: flex-start;
+    font-family: 'Tangerine', serif;
+    font-size: 15px; 
+    text-shadow: 4px 4px 4px #aaa;
+    justify-content: space-around;
+
+}
+#video_link{
+    background-image: url("../images/background.jpg");
+    padding: 40px;
+    justify-content: center;
+    display: flex;
+    align-content: space-between;
+    
+}
+#video_header{
+    padding: 1%;
+    background-color: #ff8080;
+    justify-content: center;
+    animation: fadeOutUp 7s infinite;
+}
+
+//--------------------------------------End of Index Styles----------------------------------------
+
+//------------------------------------ Footer Styles-----------------------------------------------
+.footer{
+    display: flex;
+    background-color: #F4BD0C;
+    height: $headerHeight;
+    justify-content: space-between;
+    p{
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        align-items: center;
+        
+    }
+}
+
+//----------------------Animation Color Change-----------------------------------
+@keyframes pulse {
+  0% {
+    background-color:   #7979d2;
+  }
+  100% {
+    background-color:  #262673;
+  }
+}
+//---------------------Animation Fade----------------------------
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+//-------------------------------------Light Speed In-------------------------
+@-webkit-keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+//--------------------------Fade Out--------------------------------------
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+//-------------------------------Fade In-------------------------------------
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

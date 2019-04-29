@@ -1,0 +1,45 @@
+#training_banner{
+    background-image: url("../images//pic.jpg");
+    background-size: 100% 130%; 
+    height: 350px;
+    padding-top: 200px;
+    padding-left: 50px;
+    h4 {
+        font-size: 36px;
+        position: relative;
+        color: white;
+    }
+
+}
+
+#content_description {
+    //animation: fadeOutUp 10s infinite;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    border: 1px solid black;
+    div {
+        padding: 15px;
+        margin: 10px;
+        background-color:#33001a;
+        color:white;
+        th{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: justify;
+        }
+        iframe {
+            margin: 0 10px;
+        }
+    }
+
+    #location_info{
+       border-radius: 10px;
+    }
+
+    #maps{
+        animation: pulse 7s infinite;
+        border-radius: 10px;
+        //animation: lightSpeedIn 2s;
+    }
+}

@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/*varibles*/
+#main_header {
+  height: 50px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#main_header #main_header_right {
+  display: flex;
+  align-items: center;
+}
+#main_header #header_search_form {
+  display: flex;
+  align-items: center;
+}
+#main_header #header_search_form input {
+  height: 30px;
+  width: 0;
+  background-color: #F4BD0C;
+  border: none;
+  transition: 1s width;
+  padding-left: 5px;
+}
+#main_header #header_search_form button {
+  height: 30px;
+  width: 30px;
+  background-color: #F4BD0C;
+  border: 0;
+  margin-left: -5px;
+}
+#main_header #header_search_form:hover input {
+  width: 200px;
+}
+#main_header .main_header_dropdown {
+  display: flex;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+}
+#main_header .main_header_dropdown p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#main_header .main_header_dropdown img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  /* Important for vertical align on mobile phones */
+  margin: 0;
+  /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #F4BD0C;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* right menu */
+#right_align_menu {
+  float: right;
+}
+#right_align_menu a {
+  text-transform: uppercase;
+}
+
+#social_icon {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#social_icon i {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: #A29060;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  margin: 5px;
+}
+#social_icon i:hover {
+  color: black;
+}
+
+#image_conatiner {
+  display: flex;
+  background-color: beige;
+  align-items: center;
+  border-radius: 2%;
+}
+
+#name_container {
+  margin: 5%;
+  background-image: url("../images/background.jpg");
+  padding: 5%;
+  width: 500px;
+  height: 300px;
+  border-radius: 10%;
+  align-content: flex-start;
+  font-family: "Tangerine", serif;
+  font-size: 15px;
+  text-shadow: 4px 4px 4px #aaa;
+  justify-content: space-around;
+}
+
+#video_link {
+  background-image: url("../images/background.jpg");
+  padding: 40px;
+  justify-content: center;
+  display: flex;
+  align-content: space-between;
+}
+
+#video_header {
+  padding: 1%;
+  background-color: #eeffcc;
+  justify-content: center;
+  animation: fadeOutUp 5s infinite;
+}
+
+.footer {
+  display: flex;
+  background-color: #F4BD0C;
+  height: 50px;
+  justify-content: space-between;
+}
+.footer p {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #7979d2;
+  }
+  100% {
+    background-color: #262673;
+  }
+}
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.main_content {
+  display: flex;
+}
+
+/*varibles*/
+#login_main_content {
+  background-image: url("../images/loginPagePic.jpg");
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+#login_main_content #login_form {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  width: 40%;
+}
+#login_main_content #login_form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#login_main_content #login_form label {
+  width: 20%;
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 5px;
+}
+#login_main_content #login_form input {
+  width: 75%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+#login_main_content #login_form div {
+  margin: 10px;
+}
+#login_main_content #login_form button {
+  padding: 5px 20px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  border: none;
+  background-color: #A29060;
+}
+#login_main_content #login_form #register_page {
+  text-align: center;
+}
+
+#course_banner {
+  background-image: url("../images/coursesPic.jpg");
+  background-size: 100% 130%;
+  height: 350px;
+  padding-top: 200px;
+  padding-left: 50px;
+}
+#course_banner h4 {
+  font-size: 36px;
+  position: relative;
+  color: blue;
+}
+
+#content_description {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  border: 2px solid black;
+}
+#content_description div {
+  padding: 15px;
+  margin: 10px;
+  background-color: #A29060;
+}
+#content_description div th {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}
+#content_description div iframe {
+  margin: 0 10px;
+}
+#content_description #table_main_container {
+  background-image: url("../images/1bacground.jpg");
+  color: black;
+}
+#content_description #course {
+  width: 200%;
+  height: 300%;
+  animation: pulse 5s infinite;
+  border-radius: 10px;
+}
+
+#training_banner {
+  background-image: url("../images//pic.jpg");
+  background-size: 100% 130%;
+  height: 350px;
+  padding-top: 200px;
+  padding-left: 50px;
+}
+#training_banner h4 {
+  font-size: 36px;
+  position: relative;
+  color: white;
+}
+
+#content_description {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  border: 1px solid black;
+}
+#content_description div {
+  padding: 15px;
+  margin: 10px;
+  background-color: #33001a;
+  color: white;
+}
+#content_description div th {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}
+#content_description div iframe {
+  margin: 0 10px;
+}
+#content_description #location_info {
+  border-radius: 10px;
+}
+#content_description #maps {
+  animation: pulse 7s infinite;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

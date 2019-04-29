@@ -1,0 +1,44 @@
+#course_banner {
+  background-image: url("../images/coursesPic.jpg");
+  background-size: 100% 130%;
+  height: 350px;
+  padding-top: 200px;
+  padding-left: 50px;
+}
+#course_banner h4 {
+  font-size: 36px;
+  position: relative;
+  color: blue;
+}
+
+#content_description {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  border: 2px solid black;
+}
+#content_description div {
+  padding: 15px;
+  margin: 10px;
+  background-color: #A29060;
+}
+#content_description div th {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}
+#content_description div iframe {
+  margin: 0 10px;
+}
+#content_description #table_main_container {
+  background-image: url("../images/1bacground.jpg");
+  color: black;
+}
+#content_description #course {
+  width: 200%;
+  height: 300%;
+  animation: pulse 5s infinite;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=bnyFullStackWebDeveloper.css.map */

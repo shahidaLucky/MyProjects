@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+</head>
+
+<body>
+    <div>
+        <!-------------------------------------Top Bar-------------------------------------------------------------->
+        <header id="main_header">
+            <div>
+                <a href="index.html">
+                    <img src="../images/logo.png" alt="BNY" width="150" height="60">
+                </a>
+            </div>
+            <div id="main_header_right">
+                <div class="main_header_dropdown">
+                    <img src="https://www.bnymellon.com/_global-assets/img/globe_svg/usa.svg" alt="USA">
+                    <p>United States</p>
+                </div>
+                <div id="header_search_form">
+                    <input type="text" id="header_search_input">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </header>
+        <!---------------------------------------Menu Bar------------------------------------------------------->
+                <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">HOME
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Our Story</a>
+                    <a href="#">Our People</a>
+                    <a href="#">Our World</a>
+                    <a href="#">Our Future</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">ABOUT
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Investment Services</a>
+                    <a href="#">Investment Management</a>
+                    <a href="#">Wealth Management </a>
+                    <a href="#">Markets</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">RECHARGE IT PROGRAM
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="bnyFullStackWebDeveloper.html">BNY FULL-Stack Web Developer</a>
+                    <a href="trainingLocations.html">TRAINING LOCATIONS</a>
+                </div>
+            </div>
+
+            <div id="right_align_menu">
+                <a href="login.html">Login</a>
+                <a href="registerPage.html">REGISTER</a>
+            </div>
+        </div>
+        <!----------------------------------------Main Content------------------------------------------------->
+        <div id="login_main_content">
+            <form id="login_form">
+                <h2>Register</h2>
+                <div>
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter your first name" required pattern="[A-Za-z0-9]{5,20}" />
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Enter your last name" required pattern="[A-Za-z0-9]{5,20}" />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required pattern="(?=.*/d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+                </div>
+                <div>
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder="Confirm your password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" />
+                </div>
+
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+        <!----------------------------------------End Main Content------------------------------------------------->
+
+        <!----------------------------------------Social Icons------------------------------------------------->
+        <div id="social_icon">
+            <a href="http://www.facebook.com/bnymellon"><i class="fab fa-facebook-f"></i></a>
+            <a href="http://www.youtube.com/user/BNYMellon"><i class="fab fa-youtube"></i></a>
+            <a href="http://www.twitter.com/bnymellon"><i class="fab fa-twitter"></i></a>
+            <a href="http://www.linkedin.com/company/bny-mellon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/bnymellon/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <!----------------------------------------End Of Social Icons------------------------------------------------->
+
+
+        <!------------------------------------------Footer---------------------------------------------------------->
+        <div class="footer">
+            <p>SITEMAP | SUPPLIERS | PRIVACY | TERMS OF USE</p>
+            <div>
+                <p>&copy;2019 THE BANK OF NEW YORK MELLON CORPORATION</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

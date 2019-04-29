@@ -1,0 +1,48 @@
+/*varibles*/
+#login_main_content {
+  background-image: url("../images/loginPagePic.jpg");
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+#login_main_content #login_form {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  width: 40%;
+}
+#login_main_content #login_form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#login_main_content #login_form label {
+  width: 20%;
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 5px;
+}
+#login_main_content #login_form input {
+  width: 75%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+#login_main_content #login_form div {
+  margin: 10px;
+}
+#login_main_content #login_form button {
+  padding: 5px 20px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  border: none;
+  background-color: #A29060;
+}
+#login_main_content #login_form #register_page {
+  text-align: center;
+}
+
+/*# sourceMappingURL=login.css.map */
