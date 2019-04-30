@@ -46,7 +46,7 @@
 	<br>
 	<div class="container">
 
-		<form action="/BNYMApplication/submit" method="POST">
+		<form action="/BNYMApplication/loginSuccess" method="POST">
 			<div class="form-group">
 				<label for="email">Email: *</label> <input type="email"
 					class="form-control" id="email" placeholder="Enter email"
@@ -64,8 +64,9 @@
 				</label>
 			</div>
 			<button type="submit" class="btn btn-dark" name="submit">Submit</button>
+	
 			<input type="button" class="btn btn-dark"
-				onclick="location.href= '${pageContext.request.contextPath}/registrationBoot'"
+				onclick="location.href= '${pageContext.request.contextPath}/newuser'"
 				value="Create New User" />
 		</form>
 	</div>

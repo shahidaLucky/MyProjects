@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Application Success</title>
+<title>All Application</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -43,7 +43,8 @@
 	<!-- ----------------------End of Nav -------------------------------------------->
 
 	<!--------------------------Table ----------------------------------- -->
-<br><br>
+	<br>
+	<br>
 	<div class="container">
 		<h2>Applicant Details:</h2>
 
@@ -51,6 +52,7 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
+						<th>ID</th>
 						<th>Applicant Name</th>
 						<th>Course</th>
 						<th>Mobile</th>
@@ -65,21 +67,27 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>${applicant.sName}</td>
-						<td>${applicant.sCourse}</td>
-						<td>${applicant.sMobile}</td>
-						<td><fmt:formatDate value="${applicant.sDOB}" pattern="MM/dd/yyyy"/></td>
-						<td>${applicant.sSkills}</td>
-						<td>${applicant.sAddress.street}</td>
-						<td>${applicant.sAddress.city}</td>
-						<td>${applicant.sAddress.state}</td>
-						<td>${applicant.sAddress.zipcode}</td>
-						<td><a href="/BNYMApplication/edit?id=${applicant.id}">Edit</a>
-						&nbsp;&nbsp;&nbsp; <a href="/CustomerManager/delete?id=${applicant.id}">Delete</a>
-					</td>
-					</tr>
+					<c:forEach items="${listCustomer}" var="customer">
+						<tr>
+							<td>${applicant.id}</td>
+							<td>${applicant.sName}</td>
+							<td>${applicant.sCourse}</td>
+							<td>${applicant.sMobile}</td>
+							<td><fmt:formatDate value="${applicant.sDOB}"
+									pattern="MM/dd/yyyy" /></td>
+							<td>${applicant.sSkills}</td>
+							<td>${applicant.sAddress.street}</td>
+							<td>${applicant.sAddress.city}</td>
+							<td>${applicant.sAddress.state}</td>
+							<td>${applicant.sAddress.zipcode}</td>
+							<td><a href="/BNYMApplication/edit?id=${applicant.id}">Edit</a>
+								&nbsp;&nbsp;&nbsp; <a
+								href="/BNYMApplication/delete?id=${applicant.id}">Delete</a></td>
+						</tr>
+					</c:forEach>
+
 				</tbody>
+
 			</table>
 		</div>
 	</div>

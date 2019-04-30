@@ -2,12 +2,13 @@
 	pageEncoding="UTF-8"%>
 
 <!-- Form Error -->
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap Admission Page</title>
+<title>New Application Page</title>
 <style type="text/css">
 .errormsg {
 	color: red;
@@ -57,9 +58,14 @@
 	<br>
 	<div class="container">
 
-		<form:form action="/BNYMApplication/submitform" method="POST"
+	 <form:form action="/BNYMApplication/saveApplication" method="POST"
 			modelAttribute="applicant">
+			
+			
 			<div class="form-group">
+				<label for="name">Applicant ID: </label>
+				<form:input placeholder="Enter ID"
+					class="form-control" id="id" path="id" />
 				<label for="name">Applicant Name: </label>
 				<form:input type="text" placeholder="Enter Name"
 					class="form-control" id="name" path="sName" />
@@ -132,12 +138,11 @@
 				<small> <form:errors path="sAddress.zipcode" cssClass="errormsg" />
 				</small>
 			</div>
-
-
-
 			<button type="submit" class="btn btn-dark" name="submit">Apply</button>
 
 		</form:form>
+
+		
 	</div>
 
 </body>

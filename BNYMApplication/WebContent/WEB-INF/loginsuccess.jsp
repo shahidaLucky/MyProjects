@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Application Success</title>
+<title>Greetings</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -22,11 +21,10 @@
 		<div class="row">
 			<div class="col-sm-12" style="background-color: lightgrey;">
 				<h3>BNY Application Page</h3>
-				<p>${msg}</p>
+
 			</div>
 		</div>
 	</div>
-
 	<!--------------------------- Nav Bar ---------------------------->
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<!-- Brand/logo -->
@@ -42,48 +40,30 @@
 
 	<!-- ----------------------End of Nav -------------------------------------------->
 
-	<!--------------------------Table ----------------------------------- -->
-<br><br>
+	<!-- ------------Form --------------------- -->
+	<br>
+	<br>
+
+	<h1>BNYM Greetings!</h1>
+	<h2>${msg}</h2>
+
+	<br>
 	<div class="container">
-		<h2>Applicant Details:</h2>
 
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>Applicant Name</th>
-						<th>Course</th>
-						<th>Mobile</th>
-						<th>Date Of Birth</th>
-						<th>Skills</th>
-						<th>Street</th>
-						<th>City</th>
-						<th>State</th>
-						<th>Zip Code</th>
-						<th>Action</th>
+		<!--<form action="/BNYMApplication/saveUser" method="POST">
+					<div class="form-group">
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${applicant.sName}</td>
-						<td>${applicant.sCourse}</td>
-						<td>${applicant.sMobile}</td>
-						<td><fmt:formatDate value="${applicant.sDOB}" pattern="MM/dd/yyyy"/></td>
-						<td>${applicant.sSkills}</td>
-						<td>${applicant.sAddress.street}</td>
-						<td>${applicant.sAddress.city}</td>
-						<td>${applicant.sAddress.state}</td>
-						<td>${applicant.sAddress.zipcode}</td>
-						<td><a href="/BNYMApplication/edit?id=${applicant.id}">Edit</a>
-						&nbsp;&nbsp;&nbsp; <a href="/CustomerManager/delete?id=${applicant.id}">Delete</a>
-					</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+
+						<button type="submit" class="btn btn-dark" name="submit">Submit</button>
+						<input type="button" class="btn btn-dark"
+							onclick="location.href= '${pageContext.request.contextPath}/registrationBoot'"
+							value="Create New User" />
+				</form> -->
+		<!--<button type="submit" class="btn btn-dark" name="submit">Submit</button>-->
+		<input type="button" class="btn btn-dark"
+							onclick="location.href= '${pageContext.request.contextPath}/newapplication'"
+							value="Apply" />
 	</div>
-
 </body>
 
 </html>
