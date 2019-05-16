@@ -32,12 +32,16 @@
 		<!-- Brand/logo -->
 		<a class="navbar-brand" href="#">BNY</a>
 
-		<!-- Links -->
-		<ul class="navbar-nav">
+			<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
 		</ul>
+		<form class="form-inline" method="get" action="search">
+			<input class="form-control mr-sm-2" type="text"  name="keyword" 
+				placeholder="Search Application">
+			<button class="btn btn-success" type="submit">Search</button>
+		</form>
 	</nav>
 
 	<!-- ----------------------End of Nav -------------------------------------------->
@@ -76,11 +80,17 @@
 						<td>${applicant.sAddress.state}</td>
 						<td>${applicant.sAddress.zipcode}</td>
 						<td><a href="/BNYMApplication/edit?id=${applicant.id}">Edit</a>
-						&nbsp;&nbsp;&nbsp; <a href="/CustomerManager/delete?id=${applicant.id}">Delete</a>
+						&nbsp;&nbsp;&nbsp; <a href="/BNYMApplication/delete?id=${applicant.id}">Delete</a>
 					</td>
 					</tr>
 				</tbody>
 			</table>
+			<br>
+			<div class="container">
+				<input type="button" class="btn btn-dark"
+					onclick="location.href= '${pageContext.request.contextPath}/newapplication'"
+					value="Add Another Application" />
+			</div>
 		</div>
 	</div>
 

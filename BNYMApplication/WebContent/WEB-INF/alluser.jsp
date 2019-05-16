@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,13 +34,17 @@
 		<a class="navbar-brand" href="#">BNY</a>
 
 		<!-- Links -->
-		<ul class="navbar-nav">
+		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
 		</ul>
+		<form class="form-inline" method="get" action="search">
+			<input class="form-control mr-sm-2" type="text"  name="keyword" 
+				placeholder="Search Application">
+			<button class="btn btn-success" type="submit">Search</button>
+		</form>
 	</nav>
-
 	<!-- ----------------------End of Nav -------------------------------------------->
 
 	<!--------------------------Table ----------------------------------- -->
@@ -60,6 +65,7 @@
 					</tr>
 				</thead>
 				<tbody>
+				<c:forEach items="${userList}" var="user">
 					<tr>
 						<td>${user.id}</td>
 						<td>${user.email}</td>
@@ -69,7 +75,9 @@
 							&nbsp;&nbsp;&nbsp; <a
 							href="/BNYMApplication/delete?id=${user.id}">Delete</a></td>
 					</tr>
+					</c:forEach>
 				</tbody>
+				
 			</table>
 		</div>
 	</div>

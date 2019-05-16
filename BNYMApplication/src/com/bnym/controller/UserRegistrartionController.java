@@ -2,6 +2,7 @@ package com.bnym.controller;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,9 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bnym.entity.Applicant;
 import com.bnym.entity.UserRegistration;
+import com.bnym.service.UserService;
 
 @Controller
 public class UserRegistrartionController {
+	
+	@Autowired
+	UserService userservice;
 	
 	// method to take a new user to registration form from login page
 		//@RequestMapping(value = "/registration") // step 3.
@@ -46,11 +51,13 @@ public class UserRegistrartionController {
 			if (userDoesNotExists) {
 				if (password.equals(confirmPassword)) {
 					UserRegistration newRegUser = new UserRegistration();
+					//newRegUser.setId(userservice.getAllUser().size()+1);
 					newRegUser.setEmail(email);
 					newRegUser.setPassword(password);
-
-					//ModelAndView model = new ModelAndView("admissionform");
-					ModelAndView model = new ModelAndView("newapplication");
+					
+					userservice.getAllUser().add(newRegUser);
+					ModelAndView model = new ModelAndView("alluser");
+					model.addObject("userList", userservice.getAllUser());
 					return model;
 				} else {
 					//ModelAndView model = new ModelAndView("registration");

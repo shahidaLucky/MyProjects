@@ -3,9 +3,15 @@ package com.bnym.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.TableGenerator;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -16,11 +22,12 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Applicant {
 
+	//Properties
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@NotEmpty(message = "Applicant name can not be empty")
@@ -39,10 +46,13 @@ public class Applicant {
 	@Past(message = "Birth Day cannot be in future !!!")
 	private Date sDOB;
 
+	@NotEmpty
+	@ElementCollection( fetch = FetchType.EAGER, targetClass=String.class)// by using ElementCollection we can make a list without having a class
 	private List<String> sSkills;
 
 	@NotNull
 	@Valid
+	@OneToOne(cascade = CascadeType.PERSIST)
 //	@NotEmpty(message="enter address")
 	private Address sAddress;
 

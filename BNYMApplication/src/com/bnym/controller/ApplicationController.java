@@ -1,7 +1,9 @@
 package com.bnym.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,9 +17,11 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bnym.entity.Applicant;
+
 import com.bnym.service.ApplicationService;
 
 @Controller
@@ -38,6 +42,7 @@ public class ApplicationController {
 																				// validation
 	public ModelAndView submitAdmission(@Valid @ModelAttribute("applicant") Applicant applicant, BindingResult result) {
 
+		applicationService.getAllApplicantions().add(applicant);
 		if (result.hasErrors()) {
 			// ModelAndView model = new ModelAndView("admissionform");
 			ModelAndView model = new ModelAndView("newapplication");
@@ -59,26 +64,70 @@ public class ApplicationController {
 
 		applicant.addAttribute("applicant", new Applicant());
 
-		// ModelAndView model = new ModelAndView("admissionform");
 		ModelAndView model = new ModelAndView("newapplication");
 		model.addObject("msg", "Welcome to Application Portal!");
 		return model;
 
 	}
+	//==========================================List Applicant================================
+		@RequestMapping("/allApplication")
+		public ModelAndView appList() {
+			ModelAndView mav = new ModelAndView("allapp");
+			mav.addObject("applicationList", applicationService.getAllApplicantions());
+			return mav;
+		}
 
 //===================================All Application==========================================
-	@RequestMapping(value = "/allApplication", method = RequestMethod.POST)
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ModelAndView saveApplication(@ModelAttribute("applicant") Applicant applicant) {
-		applicationService.getAllApplicants().add(applicant);
-		//ModelAndView mav = new ModelAndView("redirect:/");
+		applicationService.getAllApplicantions().add(applicant);
 		ModelAndView mav = new ModelAndView("allapplication");
 		return mav;
 	}
-	//==========================================List Applicant================================
-	@RequestMapping("/allapplication")
-	public ModelAndView home() {
-		ModelAndView mav = new ModelAndView("allapplication");
-		mav.addObject("appList", applicationService.getAllApplicants());
+	
+	//====================================Edit and Delete and Search =====================================
+	
+	@RequestMapping("/edit")
+	public ModelAndView editApplication(@RequestParam long id) {
+		Applicant applicant = applicationService.getAllApplicantions()
+				.stream()
+				.filter(app -> (int) id == (app.getId()))
+				.findAny()
+				.orElse(null);
+		
+		applicationService.getAllApplicantions().remove(applicant);
+		
+		ModelAndView mav = new ModelAndView("editapplication");
+		mav.addObject("applicant", applicant);
 		return mav;
 	}
+
+	@RequestMapping("/delete")
+	public ModelAndView deleteApplication(@RequestParam long id) {
+		Applicant applicant = applicationService.getAllApplicantions()
+				.stream()
+				.filter(app -> (int) id == (app.getId()))
+				.findAny()
+				.orElse(null);
+		applicationService.getAllApplicantions().remove(applicant);
+		ModelAndView mav = new ModelAndView("allapplication");
+		return mav;
+	}
+	
+	@RequestMapping("/search")
+	public ModelAndView search(@RequestParam String keyword) {
+		List<Applicant> result = new ArrayList<>();
+		Applicant applicant = applicationService.getAllApplicantions()
+				.stream()
+				.filter(app -> keyword.equalsIgnoreCase(app.getsName()))
+				.findAny()
+				.orElse(null);
+		result.add(applicant);
+		ModelAndView mav = new ModelAndView("searchapplication");
+		mav.addObject("result", result);
+
+		return mav;
+	}
+
+	
 }

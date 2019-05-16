@@ -1,20 +1,23 @@
 package com.bnym.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
 public class UserRegistration {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@NotEmpty
 	@Email(message = "Pleae provide you email")
 	private String email;
+	@NotEmpty
 	private String password;
 
 	// =====================--Constructors====================================

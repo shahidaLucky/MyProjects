@@ -1,6 +1,0 @@
-ID, Name, City
-001, Max, NY
-002, Maria, NJ
-003, Tom, San Jose
-004, Lucy, San Jose
-oo5, David, San Jose

@@ -10,9 +10,9 @@ import com.bnym.entity.Applicant;
 @Service("applicationService")
 public class ApplicationService {
 
-	private List<Applicant> appList = new ArrayList<>();
+	private List<Applicant> applicationList = new ArrayList<>();
 
-	public List<Applicant> getAllApplicants() {
-		return appList;
+	public List<Applicant> getAllApplicantions() {
+		return applicationList;
 	}
 }
