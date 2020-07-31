@@ -3,3 +3,40 @@ Tech Stacks Used-  Java, MYSQL, Spring MVC, JPA, Maven, HTML, CSS, Bootstrap
 
 The web application has been developed for company name Global Well where the employees can apply for a 
 tuition assistance loan as per the company policy and the loan can be processed and tracked by company HR and Accounting Department. It was a individual Project.
+
+My CaseStudy Readme:
+Idea:
+Develop a new web application on Tuition Assistance Program to Retain Millennial's a large scale organization named Global Well.
+•	Type of the application?
+o	ERP
+•	Key functions?
+o	Develop user interfaces with log in and log out option for both HR users (Admin User) and ATAP applicant/Employee.
+
+	The Applicant will be able to create their profile and then login to their account using username and password. The email address should be unique.
+	In the Home Page, applicant will be to learn the key features of the Tuition assistance program so that they can decide whether they would like to participate or not. 
+	The applicant will be able to assess their eligibility through Eligibility Test prior to submit the application and take print for further record.
+	The applicant will be able to apply for Tuition Assistance through an application page.
+	The Admin will be able to login and will see the records of the Employees.
+
+The CaseStudy Project: 
+Entities: 
+1.	Employee – All the properties and getter setter methods of the employee
+2.	Address – address properties and getter setter methods.
+3.	Apply --  All the application properties and getter and setter methods.
+4.	EmployeeJobBasic – All the properties of job
+5.	Authorities --- for Security
+6.	UserProfile -- forsecurity
+Controllers:
+1.	ApplyController
+2.	AboutController
+3.	EligibilityController
+4.	EmployeeController
+5.	EmployeeHomeController
+6.	IndexController
+7.	SeeMoreController
+Service:
+1.	ApplyService
+2.	EmployeeService
+3.	LoginService
+4.	UserProfileService
+
